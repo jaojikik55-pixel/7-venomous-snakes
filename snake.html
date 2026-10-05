@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐍 งูพิษ 7 ชนิดในประเทศไทย</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, "Noto Sans Thai", sans-serif;
+    background: #f1f8f4;
+    color: #16352a;
+}
+
+header {
+    background: linear-gradient(135deg, #064e3b, #15803d);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 38px;
+}
+
+header p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.intro {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.intro h2 {
+    color: #064e3b;
+}
+
+.type-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.type-box {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.type-box h2 {
+    color: #064e3b;
+    margin-top: 0;
+}
+
+.type-box ul {
+    line-height: 1.8;
+}
+
+.snake-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.snake-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.snake-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.16);
+}
+
+.snake-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: #064e3b;
+}
+
+.english {
+    color: #777;
+    font-style: italic;
+}
+
+.tag {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    position: relative;
+    padding: 25px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #555;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.modal-content h2 {
+    color: #064e3b;
+    margin-bottom: 5px;
+}
+
+.modal-content h3 {
+    color: #15803d;
+    margin-top: 25px;
+}
+
+.info-box {
+    background: #f0fdf4;
+    border-left: 5px solid #22c55e;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.chemical-box {
+    background: #eff6ff;
+    border-left: 5px solid #3b82f6;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.first-aid-box {
+    background: #fff7ed;
+    border-left: 5px solid #f97316;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.do-not-box {
+    background: #fef2f2;
+    border-left: 5px solid #ef4444;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.warning {
+    background: #fef3c7;
+    border-left: 6px solid #f59e0b;
+    padding: 20px;
+    margin-top: 35px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    background: #064e3b;
+    color: white;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    .modal-content img {
+        height: 220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐍 งูพิษ 7 ชนิดในประเทศไทย</h1>
+    <p>เรียนรู้ลักษณะ พิษ อาการ และการปฐมพยาบาลเบื้องต้น</p>
+</header>
+
+<div class="container">
+
+    <div class="intro">
+        <h2>เกี่ยวกับงูพิษ</h2>
+        <p>
+            ประเทศไทยมีงูพิษหลายชนิดที่มีพิษแตกต่างกัน
+            พิษงูประกอบด้วยโปรตีนและเปปไทด์หลายชนิด
+            ซึ่งสามารถส่งผลต่อระบบประสาท ระบบเลือด กล้ามเนื้อ
+            และเนื้อเยื่อของร่างกาย
+        </p>
+        <p>
+            <strong>คลิกที่รูปงูแต่ละชนิด</strong>
+            เพื่อดูข้อมูลเพิ่มเติม
+        </p>
+    </div>
+
+    <!-- ประเภทของพิษ 2 ประเภท -->
+    <div class="type-section">
+
+        <div class="type-box">
+            <h2>🧠 พิษเด่นต่อระบบประสาท</h2>
+            <p>งูในกลุ่มนี้มีพิษที่ส่งผลสำคัญต่อระบบประสาทและกล้ามเนื้อ</p>
+            <ul>
+                <li>งูเห่า</li>
+                <li>งูจงอาง</li>
+                <li>งูสามเหลี่ยม</li>
+                <li>งูทับสมิงคลา</li>
+            </ul>
+            <p>
+                <strong>ตัวอย่างสารพิษ:</strong>
+                α-Neurotoxins, α-Bungarotoxin,
+                β-Bungarotoxin และ PLA₂
+            </p>
+        </div>
+
+        <div class="type-box">
+            <h2>🩸 พิษเด่นต่อระบบเลือดและเนื้อเยื่อ</h2>
+            <p>งูในกลุ่มนี้มีพิษที่ส่งผลสำคัญต่อเลือด หลอดเลือด และเนื้อเยื่อ</p>
+            <ul>
+                <li>งูกะปะ</li>
+                <li>งูแมวเซา</li>
+                <li>งูเขียวหางไหม้</li>
+            </ul>
+            <p>
+                <strong>ตัวอย่างสารพิษ:</strong>
+                Metalloproteinases, Serine Proteases,
+                C-type Lectins และ PLA₂
+            </p>
+        </div>
+
+    </div>
+
+    <div class="snake-grid">
+
+        <div class="snake-card" onclick="openModal('cobra')">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/N.kaouthia.jpg">
+            <div class="card-content">
+                <h3>🐍 งูเห่า</h3>
+                <div class="english">Monocled Cobra</div>
+                <span class="tag">🧠 พิษเด่นต่อระบบประสาท</span>
+            </div>
+        </div>
+
+        <div class="snake-card" onclick="openModal('kingcobra')">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ophiophagus_hannah.jpg">
+            <div class="card-content">
+                <h3>🐍 งูจงอาง</h3>
+                <div class="english">King Cobra</div>
+                <span class="tag">🧠 พิษเด่นต่อระบบประสาท</span>
+            </div>
+        </div>
+
+        <div class="snake-card" onclick="openModal('bandedkrait')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bungarus_fasciatus_246804666.jpg">
+            <div class="card-content">
+                <h3>🐍 งูสามเหลี่ยม</h3>
+                <div class="english">Banded Krait</div>
+                <span class="tag">🧠 พิษเด่นต่อระบบประสาท</span>
+            </div>
+        </div>
+
+        <div class="snake-card" onclick="openModal('malayankrait')">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bungarus_candidus,_Blue_krait_-_Cha-Am_District_(27480193626).jpg">
+            <div class="card-content">
+                <h3>🐍 งูทับสมิงคลา</h3>
+                <div class="english">Blue Krait</div>
+                <span class="tag">🧠 พิษเด่นต่อระบบประสาท</span>
+            </div>
+        </div>
+
+        <div class="snake-card" onclick="openModal('pitviper')">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Calloselasma_rhodostoma,_Malayan_pit_viper_-_Kaeng_Krachan_District,_Phetchaburi_(33670021633).jpg">
+            <div class="card-content">
+                <h3>🐍 งูกะปะ</h3>
+                <div class="english">Malayan Pit Viper</div>
+                <span class="tag">🩸 พิษเด่นต่อระบบเลือดและเนื้อเยื่อ</span>
+            </div>
+        </div>
+
+        <div class="snake-card" onclick="openModal('russellviper')">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Daboia_siamensis,_Siamese_Russell's_viper_-_Wichian_Buri_District,_Phetchabun_Province_(44300970770).jpg">
+            <div class="card-content">
+                <h3>🐍 งูแมวเซา</h3>
+                <div class="english">Siamese Russell's Viper</div>
+                <span class="tag">🩸 พิษเด่นต่อระบบเลือดและเนื้อเยื่อ</span>
+            </div>
+        </div>
+
+        <div class="snake-card" onclick="openModal('greenviper')">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Trimeresurus_albolabris.jpg">
+            <div class="card-content">
+                <h3>🐍 งูเขียวหางไหม้</h3>
+                <div class="english">Green Pit Viper</div>
+                <span class="tag">🩸 พิษเด่นต่อระบบเลือดและเนื้อเยื่อ</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ ข้อควรระวัง</strong>
+        <p>
+            หากถูกงูพิษกัด ควรลดการเคลื่อนไหวของร่างกาย
+            ถอดแหวน นาฬิกา หรือสิ่งรัดแน่นบริเวณที่ถูกกัด
+            และรีบนำส่งโรงพยาบาลโดยเร็ว
+        </p>
+        <p>
+            หากทำได้อย่างปลอดภัย สามารถถ่ายรูปงูจากระยะห่าง
+            เพื่อช่วยในการระบุชนิด แต่ไม่ควรเข้าใกล้หรือจับงู
+        </p>
+        <strong>โทร 1669 เมื่อเป็นเหตุฉุกเฉิน</strong>
+    </div>
+
+</div>
+
+<footer>
+    🐍 เว็บไซต์ให้ความรู้เกี่ยวกับงูพิษในประเทศไทย
+</footer>
+
+
+<!-- MODAL -->
+
+<div id="snakeModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <img id="modalImage" src="">
+
+        <h2 id="modalTitle"></h2>
+        <p id="modalEnglish" class="english"></p>
+
+        <span id="modalType" class="tag"></span>
+
+        <h3>📖 ข้อมูลทั่วไป</h3>
+        <div class="info-box">
+            <p id="modalDescription"></p>
+        </div>
+
+        <h3>🧪 ประเภทและองค์ประกอบสำคัญของพิษ</h3>
+        <div class="chemical-box">
+            <p id="modalChemical"></p>
+        </div>
+
+        <h3>☠️ พิษมีผลต่อร่างกายอย่างไร</h3>
+        <div class="info-box">
+            <p id="modalPoison"></p>
+        </div>
+
+        <h3>🤒 อาการที่อาจพบ</h3>
+        <div class="info-box">
+            <p id="modalSymptoms"></p>
+        </div>
+
+        <h3>🏥 หากถูกกัด</h3>
+        <div class="first-aid-box">
+            <p id="modalFirstAid"></p>
+        </div>
+
+        <h3>🚫 สิ่งที่ไม่ควรทำ</h3>
+        <div class="do-not-box">
+            <p id="modalDoNot"></p>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+
+const snakeData = {
+
+    cobra: {
+        title: "งูเห่า",
+        english: "Monocled Cobra (Naja kaouthia)",
+        type: "🧠 พิษเด่นต่อระบบประสาท",
+
+        image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/N.kaouthia.jpg",
+
+        description:
+        "งูเห่าเป็นงูพิษที่พบได้ในประเทศไทย พิษสามารถส่งผลต่อระบบประสาท กล้ามเนื้อ และเนื้อเยื่อบริเวณที่ถูกกัด",
+
+        chemical:
+        "<strong>ประเภท:</strong> พิษเด่นต่อระบบประสาท<br><br>" +
+        "<strong>α-Neurotoxins</strong> — รบกวนการส่งสัญญาณระหว่างเส้นประสาทกับกล้ามเนื้อ<br><br>" +
+        "<strong>Phospholipase A₂ (PLA₂)</strong> — เกี่ยวข้องกับการทำลายเยื่อหุ้มเซลล์และการอักเสบ<br><br>" +
+        "<strong>Cytotoxins</strong> — ทำให้เซลล์และเนื้อเยื่อเสียหาย",
+
+        poison:
+        "พิษมีผลเด่นต่อระบบประสาทและกล้ามเนื้อ และอาจทำให้เกิดความเสียหายต่อเนื้อเยื่อบริเวณที่ถูกกัด",
+
+        symptoms:
+        "ปวดและบวมบริเวณแผล อาจมีหนังตาตก กล้ามเนื้ออ่อนแรง พูดหรือกลืนลำบาก และในกรณีรุนแรงอาจมีปัญหาการหายใจ",
+
+        firstAid:
+        "ให้อยู่นิ่ง ลดการเคลื่อนไหว ถอดแหวน นาฬิกา หรือสิ่งรัดแน่นบริเวณที่ถูกกัด และรีบนำส่งโรงพยาบาลโดยเร็ว",
+
+        doNot:
+        "ห้ามขันชะเนาะหรือรัดแขนขาแน่น ห้ามกรีดแผล ห้ามดูดพิษ ห้ามบีบหรือนวดแผล และไม่ควรใช้สมุนไพรหรือวิธีพื้นบ้าน"
+    },
+
+    kingcobra: {
+        title: "งูจงอาง",
+        english: "King Cobra (Ophiophagus hannah)",
+        type: "🧠 พิษเด่นต่อระบบประสาท",
+
+        image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ophiophagus_hannah.jpg",
+
+        description:
+        "งูจงอางเป็นงูพิษขนาดใหญ่ พิษมีผลสำคัญต่อระบบประสาทและกล้ามเนื้อ",
+
+        chemical:
+        "<strong>ประเภท:</strong> พิษเด่นต่อระบบประสาท<br><br>" +
+        "<strong>α-Neurotoxins</strong> — รบกวนการส่งสัญญาณประสาทไปยังกล้ามเนื้อ<br><br>" +
+        "<strong>Phospholipase A₂ (PLA₂)</strong> — มีส่วนต่อความเสียหายของเซลล์<br><br>" +
+        "<strong>Cytotoxins</strong> — ทำลายเซลล์และเนื้อเยื่อ<br><br>" +
+        "<strong>Cardiotoxic components</strong> — อาจมีผลต่อเซลล์ของระบบหัวใจ",
+
+        poison:
+        "พิษส่งผลต่อระบบประสาทและกล้ามเนื้อเป็นหลัก และอาจทำให้ภาวะกล้ามเนื้ออ่อนแรงจนกระทบการหายใจ",
+
+        symptoms:
+        "ปวด บวม หนังตาตก กล้ามเนื้ออ่อนแรง พูดหรือกลืนลำบาก และอาจเกิดภาวะหายใจล้มเหลวในรายรุนแรง",
+
+        firstAid:
+        "ให้อยู่นิ่ง ลดการเคลื่อนไหว ถอดสิ่งรัดแน่น และรีบนำส่งโรงพยาบาลโดยเร็ว",
+
+        doNot:
+        "ห้ามรัดแขนขาแน่น ห้ามกรีดแผล ห้ามดูดพิษ ห้ามบีบหรือนวดแผล และไม่ควรใช้สมุนไพรหรือวิธีพื้นบ้าน"
+    },
+
+    bandedkrait: {
+        title: "งูสามเหลี่ยม",
+        english: "Banded Krait (Bungarus fasciatus)",
+        type: "🧠 พิษเด่นต่อระบบประสาท",
+
+        image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Bungarus_fasciatus_246804666.jpg",
+
+        description:
+        "งูสามเหลี่ยมมีลำตัวเป็นปล้องสีดำและเหลือง พิษมีผลต่อการทำงานของระบบประสาทและกล้ามเนื้อ",
+
+        chemical:
+        "<strong>ประเภท:</strong> พิษเด่นต่อระบบประสาท<br><br>" +
+        "<strong>α-Bungarotoxin</strong> — ยับยั้งการส่งสัญญาณจากเส้นประสาทไปยังกล้ามเนื้อ<br><br>" +
+        "<strong>β-Bungarotoxin</strong> — มีผลต่อปลายประสาท<br><br>" +
+        "<strong>Phospholipase A₂ (PLA₂)</strong> — เกี่ยวข้องกับความเสียหายของเซลล์",
+
+        poison:
+        "พิษออกฤทธิ์ต่อระบบประสาท ทำให้การส่งสัญญาณไปยังกล้ามเนื้อผิดปกติ",
+
+        symptoms:
+        "หนังตาตก กล้ามเนื้ออ่อนแรง พูดไม่ชัด กลืนลำบาก และอาจมีปัญหาการหายใจ",
+
+        firstAid:
+        "ให้อยู่นิ่ง ลดการเคลื่อนไหว ถอดสิ่งรัดแน่น และรีบนำส่งโรงพยาบาลโดยเร็ว",
+
+        doNot:
+        "ห้ามรัดแขนขาแน่น ห้ามกรีดแผล ห้ามดูดพิษ ห้ามบีบหรือนวดแผล และไม่ควรใช้สมุนไพรหรือวิธีพื้นบ้าน"
+    },
+
+    malayankrait: {
+        title: "งูทับสมิงคลา",
+        english: "Blue Krait (Bungarus candidus)",
+        type: "🧠 พิษเด่นต่อระบบประสาท",
+
+        image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bungarus_candidus,_Blue_krait_-_Cha-Am_District_(27480193626).jpg",
+
+        description:
+        "งูทับสมิงคลามีพิษต่อระบบประสาทอย่างรุนแรง และอาจทำให้กล้ามเนื้อที่ใช้ในการหายใจอ่อนแรง",
+
+        chemical:
+        "<strong>ประเภท:</strong> พิษเด่นต่อระบบประสาท<br><br>" +
+        "<strong>α-Bungarotoxin</strong> — รบกวนการทำงานของตัวรับสัญญาณประสาทและกล้ามเนื้อ<br><br>" +
+        "<strong>β-Bungarotoxin</strong> — มีผลต่อปลายประสาท<br><br>" +
+        "<strong>Phospholipase A₂ (PLA₂)</strong> — มีส่วนต่อความเสียหายของเซลล์",
+
+        poison:
+        "พิษมีผลเด่นต่อระบบประสาทและการทำงานของกล้ามเนื้อ",
+
+        symptoms:
+        "หนังตาตก กล้ามเนื้ออ่อนแรง พูดไม่ชัด กลืนลำบาก และอาจเกิดภาวะหายใจล้มเหลว",
+
+        firstAid:
+        "ให้อยู่นิ่ง ลดการเคลื่อนไหว ถอดสิ่งรัดแน่น และรีบนำส่งโรงพยาบาลโดยเร็ว",
+
+        doNot:
+        "ห้ามรัดแขนขาแน่น ห้ามกรีดแผล ห้ามดูดพิษ ห้ามบีบหรือนวดแผล และไม่ควรใช้สมุนไพรหรือวิธีพื้นบ้าน"
+    },
+
+    pitviper: {
+        title: "งูกะปะ",
+        english: "Malayan Pit Viper (Calloselasma rhodostoma)",
+        type: "🩸 พิษเด่นต่อระบบเลือดและเนื้อเยื่อ",
+
+        image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Calloselasma_rhodostoma,_Malayan_pit_viper_-_Kaeng_Krachan_District,_Phetchaburi_(33670021633).jpg",
+
+        description:
+        "งูกะปะเป็นงูพิษกลุ่มงูเขี้ยวพับ พิษมีผลเด่นต่อหลอดเลือด การแข็งตัวของเลือด และเนื้อเยื่อ",
+
+        chemical:
+        "<strong>ประเภท:</strong> พิษเด่นต่อระบบเลือดและเนื้อเยื่อ<br><br>" +
+        "<strong>Metalloproteinases</strong> — ทำลายโครงสร้างของหลอดเลือดและเนื้อเยื่อ<br><br>" +
+        "<strong>Serine Proteases</strong> — รบกวนกระบวนการแข็งตัวของเลือด<br><br>" +
+        "<strong>Phospholipase A₂ (PLA₂)</strong> — มีส่วนต่อความเสียหายของเซลล์<br><br>" +
+        "<strong>C-type Lectins</strong> — มีผลต่อเกล็ดเลือดและระบบการแข็งตัวของเลือด",
+
+        poison:
+        "พิษมีผลเด่นต่อระบบเลือด หลอดเลือด และเนื้อเยื่อบริเวณที่ถูกกัด",
+
+        symptoms:
+        "ปวด บวม เลือดออกง่าย เลือดแข็งตัวผิดปกติ และอาจเกิดความเสียหายของเนื้อเยื่อ",
+
+        firstAid:
+        "ให้อยู่นิ่ง ลดการเคลื่อนไหว ถอดแหวน นาฬิกา หรือสิ่งรัดแน่น และรีบนำส่งโรงพยาบาลโดยเร็ว",
+
+        doNot:
+        "ห้ามรัดแขนขาแน่น ห้ามกรีดแผล ห้ามดูดพิษ ห้ามบีบหรือนวดแผล ห้ามประคบน้ำแข็ง และไม่ควรใช้สมุนไพร"
+    },
+
+    russellviper: {
+        title: "งูแมวเซา",
+        english: "Siamese Russell's Viper (Daboia siamensis)",
+        type: "🩸 พิษเด่นต่อระบบเลือดและเนื้อเยื่อ",
+
+        image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Daboia_siamensis,_Siamese_Russell's_viper_-_Wichian_Buri_District,_Phetchabun_Province_(44300970770).jpg",
+
+        description:
+        "งูแมวเซามีพิษที่ส่งผลอย่างมากต่อระบบการแข็งตัวของเลือด และอาจทำให้เกิดภาวะแทรกซ้อนต่อไต",
+
+        chemical:
+        "<strong>ประเภท:</strong> พิษเด่นต่อระบบเลือดและเนื้อเยื่อ<br><br>" +
+        "<strong>Metalloproteinases</strong> — มีส่วนต่อความเสียหายของหลอดเลือด<br><br>" +
+        "<strong>Serine Proteases</strong> — รบกวนระบบการแข็งตัวของเลือด<br><br>" +
+        "<strong>Phospholipase A₂ (PLA₂)</strong> — มีผลต่อเยื่อหุ้มเซลล์<br><br>" +
+        "<strong>Coagulation-acting toxins</strong> — รบกวนกระบวนการแข็งตัวของเลือด",
+
+        poison:
+        "พิษส่งผลต่อระบบเลือดและการแข็งตัวของเลือด และอาจนำไปสู่ภาวะแทรกซ้อน เช่น ไตทำงานผิดปกติ",
+
+        symptoms:
+        "เลือดออกง่าย เลือดออกตามไรฟัน ปัสสาวะเป็นเลือด อ่อนเพลีย บวม และอาจมีภาวะไตผิดปกติ",
+
+        firstAid:
+        "ให้อยู่นิ่ง ลดการเคลื่อนไหว ถอดสิ่งรัดแน่น และรีบนำส่งโรงพยาบาลโดยเร็ว",
+
+        doNot:
+        "ห้ามรัดแขนขาแน่น ห้ามกรีดแผล ห้ามดูดพิษ ห้ามบีบหรือนวดแผล ห้ามประคบน้ำแข็ง และไม่ควรใช้สมุนไพร"
+    },
+
+    greenviper: {
+        title: "งูเขียวหางไหม้",
+        english: "Green Pit Viper",
+        type: "🩸 พิษเด่นต่อระบบเลือดและเนื้อเยื่อ",
+
+        image: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Trimeresurus_albolabris.jpg",
+
+        description:
+        "งูเขียวหางไหม้เป็นกลุ่มงูพิษที่พบในประเทศไทย พิษสามารถส่งผลต่อหลอดเลือด เกล็ดเลือด และเนื้อเยื่อ",
+
+        chemical:
+        "<strong>ประเภท:</strong> พิษเด่นต่อระบบเลือดและเนื้อเยื่อ<br><br>" +
+        "<strong>Metalloproteinases</strong> — ทำลายโครงสร้างของหลอดเลือดและเนื้อเยื่อ<br><br>" +
+        "<strong>C-type Lectins</strong> — มีผลต่อเกล็ดเลือด<br><br>" +
+        "<strong>Serine Proteases</strong> — มีผลต่อกระบวนการแข็งตัวของเลือด<br><br>" +
+        "<strong>Phospholipase A₂ (PLA₂)</strong> — มีส่วนต่อความเสียหายของเซลล์",
+
+        poison:
+        "พิษมีผลเด่นต่อระบบเลือด หลอดเลือด และเนื้อเยื่อบริเวณที่ถูกกัด",
+
+        symptoms:
+        "ปวด บวม ช้ำ เลือดออกง่าย และอาจมีความผิดปกติของการแข็งตัวของเลือด",
+
+        firstAid:
+        "ให้อยู่นิ่ง ลดการเคลื่อนไหว ถอดแหวน นาฬิกา หรือสิ่งรัดแน่น และรีบนำส่งโรงพยาบาลโดยเร็ว",
+
+        doNot:
+        "ห้ามรัดแขนขาแน่น ห้ามกรีดแผล ห้ามดูดพิษ ห้ามบีบหรือนวดแผล ห้ามประคบน้ำแข็ง และไม่ควรใช้สมุนไพร"
+    }
+};
+
+
+function openModal(snake) {
+
+    const data = snakeData[snake];
+
+    document.getElementById("modalImage").src = data.image;
+    document.getElementById("modalTitle").textContent = data.title;
+    document.getElementById("modalEnglish").textContent = data.english;
+    document.getElementById("modalType").textContent = data.type;
+
+    document.getElementById("modalDescription").innerHTML =
+        data.description;
+
+    document.getElementById("modalChemical").innerHTML =
+        data.chemical;
+
+    document.getElementById("modalPoison").innerHTML =
+        data.poison;
+
+    document.getElementById("modalSymptoms").innerHTML =
+        data.symptoms;
+
+    document.getElementById("modalFirstAid").innerHTML =
+        data.firstAid;
+
+    document.getElementById("modalDoNot").innerHTML =
+        data.doNot;
+
+    document.getElementById("snakeModal").style.display = "flex";
+}
+
+
+function closeModal() {
+    document.getElementById("snakeModal").style.display = "none";
+}
+
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("snakeModal");
+
+    if (event.target === modal) {
+        closeModal();
+    }
+
+};
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeModal();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
